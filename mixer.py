@@ -15,10 +15,12 @@ class Mixer:
             
             output = sound1+sound2
             
-            output.export(f1+"_and_"+f2+"_combined."+f, format=f)
-            
+            out_ = output.export(f1+"_and_"+f2+"_combined."+f, format=f)
+            out_.close()
             return True
         except Exception as error:
+            print("An exception occurred:", error)
+            traceback.print_exc()
             return False
 
     @staticmethod
@@ -32,9 +34,12 @@ class Mixer:
             
             output = sound1.overlay(sound2, t)
             
-            output.export(f1+"_and_"+f2+"_overlayed."+f, format=f)
+            out_ = output.export(f1+"_and_"+f2+"_overlayed."+f, format=f)
+            out_.close()
             return True
         except Exception as error:
+            print("An exception occurred:", error)
+            traceback.print_exc()
             return False
 
     @staticmethod
@@ -56,8 +61,11 @@ class Mixer:
 
             output = segment1.overlay(segment2, offset)
             
-            output.export(f1+"_and_"+f2+"_mixed."+f, format=f)
+            out_ = output.export(f1+"_and_"+f2+"_mixed."+f, format=f)
+            out_.close()
             return True
         except Exception as error:
+            print("An exception occurred:", error)
+            traceback.print_exc()
             return False
 
