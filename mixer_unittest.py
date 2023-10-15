@@ -1,5 +1,5 @@
 import unittest
-#from mixer import Mixer
+from mixer import Mixer
 
 
 class TestMixer(unittest.TestCase):
